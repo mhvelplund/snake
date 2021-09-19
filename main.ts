@@ -124,6 +124,7 @@ while (true) {
         let head = getIndex(headX, headY)
         if (map[head] == 2) {
             score++ // Eat pellet
+            pelletCount--
             map[head] = 0
         } else if (map[head] == 1) {
             dead = true // Hit wall
@@ -140,6 +141,10 @@ while (true) {
         }
 
         if (dead) break;
+
+        if (pelletCount == 0) break;
+
+        // TODO: pelletcount and score are essentially the same. only need one ..
 
         snake.unshift(head)
 
