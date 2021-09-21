@@ -92,20 +92,32 @@ input.onButtonPressed(Button.AB, function () {
     reset = true
 })
 
-let pelletCount = 0
-let snake: number[] = []
-let camera: number[] = []
-let map: number[] = []
-let map_width = 0
-let map_height = 0
-let direction = 3 // 1 north, 2 east, 3 south, 4 west
-let directionChange = 0 // 0 straight, 1 right, -1 left
-let frameMS = 300
-let score = 0
-let reset = false
+let pelletCount: number
+let snake: number[]
+let camera: number[]
+let map: number[]
+let map_width: number
+let map_height: number
+let direction: number
+let directionChange: number
+let frameMS: number
+let score: number
+let reset: boolean
 
 
 while (true) {
+    pelletCount = 0
+    snake = []
+    camera = []
+    map = []
+    map_width = 0
+    map_height = 0
+    direction = 3 // 1 north, 2 east, 3 south, 4 west
+    directionChange = 0 // 0 straight, 1 right, -1 left
+    frameMS = 300
+    score = 0
+    reset = false
+
     initGame(10, 10)
     while (true) {
         let dead = false
